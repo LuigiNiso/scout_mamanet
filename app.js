@@ -71,10 +71,37 @@ function createPlayer(player, index) {
 }
 
 // Get the container element where you want to append the player
-var container = document.querySelector  ("body"); // Replace "container" with the actual ID or class of the container element
+var container = document.querySelector("body"); // Replace "container" with the actual ID or class of the container element
 
 // Create players and append them to the container
 giocatrici.forEach(function (player, index) {
     var playerElement = createPlayer(player, index);
     container.appendChild(playerElement);
 });
+
+// Function to generate PDF
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF({
+        orientation: 'l',
+        unit: 'mm',
+        format: 'a4',
+        putOnlyUsedFonts: true
+    });
+
+    // Add content to PDF
+    pdf.text("Date: " + document.querySelector(".date").innerText, 20, 20);
+    pdf.text("Opponent: " + document.querySelector(".opp").value, 20, 30);
+    pdf.text("Title: Attacchi", 20, 40);
+
+    var yPosition = 50;
+
+    giocatrici.forEach(function (player) {
+        pdf.text(player.name + ": " + player.points, 20, yPosition);
+        yPosition += 10;
+    });
+
+    // Save the PDF
+    pdf.save("attacchi.pdf");
+}
