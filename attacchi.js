@@ -91,9 +91,9 @@ function generatePDF() {
     });
 
     // Add content to PDF
-    pdf.text("Date: " + document.querySelector(".date").innerText, 20, 20);
-    pdf.text("Opponent: " + document.querySelector(".opp").value, 20, 30);
-    pdf.text("Title: Attacchi", 20, 40);
+    pdf.text(document.querySelector(".date").innerText, 20, 20);
+    pdf.text("Avversario: " + document.querySelector(".opp").value, 20, 30);
+    pdf.text("Titolo: Attacchi", 20, 40);
 
     var yPosition = 50;
 
@@ -103,5 +103,5 @@ function generatePDF() {
     });
 
     // Save the PDF
-    pdf.save("attacchi.pdf");
+    pdf.save(document.querySelector(".opp").value + "-difese-" + document.querySelector(".date").innerHTML.substring(6) + ".pdf");
 }
