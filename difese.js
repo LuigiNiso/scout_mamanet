@@ -89,6 +89,13 @@ function generatePDF() {
         format: 'a4',
         putOnlyUsedFonts: true
     });
+    
+    var logoImage = new Image();
+    logoImage.src = 'logo.png'; // Replace with the actual path to your logo
+    var logoWidth = 30;
+    var logoHeight = 30;
+    var topRightX = pdf.internal.pageSize.width - 10 - logoWidth;
+    pdf.addImage(logoImage, 'PNG', topRightX, 10, logoWidth, logoHeight);
 
     // Add content to PDF
     pdf.text(document.querySelector(".date").innerText, 20, 20);
