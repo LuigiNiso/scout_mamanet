@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+h1 {
+    padding: 20px;
+}
+
+h3 {
+    padding: 10px;
+}
+
+.opp {
+    padding: 10px;
+    margin: 10px;
+}
+
+.player {
+    margin: 20px;
+    width: 90%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px gray;
+    border-radius: 10px;
+}
+
+.player button {
+    border: none;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+}
+
+.player .name {
+    width: 100%;
+    text-indent: 10px;
+}
+
+.player .points {
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2481bf;
+    /* Blueish color */
+    color: #fff;
+    /* White text color */
+    padding: 10px 20px;
+    /* Adjust padding as needed */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    border: none;
+    border-radius: 5px;
+    /* Adds a slight border radius for a rounded look */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect on hover */
+}
+
+.save:hover {
+    background-color: #1b679a;
+    /* Darker blueish color on hover */
+}
